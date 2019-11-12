@@ -1,6 +1,6 @@
 const axios = require("axios");
 const router = require("express").Router();
-const queryURL = "https://www.googleapis.com/books/v1/volumes/q=";
+const queryURL = "https://www.googleapis.com/books/v1/volumes?q=";
 const API_KEY = process.env.API_KEY;
 
 router.get("/recipes", (req, res) => {
