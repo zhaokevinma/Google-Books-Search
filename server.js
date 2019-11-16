@@ -1,11 +1,10 @@
 // ------ Dependencies ------
 const express = require("express");
-const path = require("path");
 const mongoose = require('mongoose');
 
 // ------ Environmental Variables ------
 const PORT = process.env.PORT || 3001;
-const apiRoutes = require("./routes/apiRoutes");
+const routes = require("./routes");
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/googlebooks';
 
 // ------ Create App -------
@@ -21,13 +20,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // ------ Use apiRoutes ------
-app.use("/api", apiRoutes);
-
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+app.use(routes);
 
 // ------ Connect to Database ------
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
