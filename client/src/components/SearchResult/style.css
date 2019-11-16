@@ -1,19 +1,18 @@
 .card{
-    border-radius: 10px;
-    background-color: lightgrey
+    background-color: #18B79C;
+    color: white;
+    border-radius: 0;
 }
 
 .search-list{
-    border-radius: 15px;
-    background-color: lightblue
+    background-color: #ecf0f1;
+    color: black;
 }
 
 .saveBook {
-    border-radius: 5px;
     margin-left: 10px
 }
 
 .viewBook {
-    border-radius: 5px;
     margin-left: 5px
 }

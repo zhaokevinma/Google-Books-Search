@@ -1,12 +1,14 @@
 form{
-    background: lightblue;
-    border-radius: 15px;
+    background: #18BC9C;
+    color: white;
 }
 .BookSearchLabel{
     margin-left:20px;
     margin-top: 10px
 }
 .submitBtn{
+    color: black;
+    background-color: #ecf0f1;
     margin-bottom: 10px;
     margin-left: 20px;
 }
