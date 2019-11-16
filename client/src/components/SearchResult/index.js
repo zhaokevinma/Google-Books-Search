@@ -5,17 +5,17 @@ import {Row, Col} from "../Grid"
 const SearchResult = props => {
     return (props.books.length === 0) ? (
         <div className="card">
-            <div className="card-body player">
+            <div className="card-body">
                 <div className="article">
-                    <h3>Search Results</h3>
+                    <h4>Here is a list of books that Google returned</h4>
                 </div>
             </div>
         </div>
     ) : (
             <div className="card">
-                <div className="card-body player">
+                <div className="card-body">
                     <div className="article">
-                        <h3>Search Results</h3>
+                        <h4>Here is a list of books that Google returned</h4>
                         {props.books.map(book => {
                             return (
                                 <li className="search-list list-group-item">
@@ -28,10 +28,10 @@ const SearchResult = props => {
                                         {/* col-9 show information of the book */}
                                         <Col size="9" className="bookInfo">
                                             <Row>
-                                                <h3 className="bookTitle">{book.title}</h3>
+                                                <h4 className="bookTitle">{book.title}</h4>
                                             </Row>
                                             <Row>
-                                                <h4 className="bookAuthor">{book.author}</h4>
+                                                <h5 className="bookAuthor">{book.author}</h5>
                                             </Row>
                                             <Row>
                                                 <p className="bookDescription">{book.description}</p>
@@ -43,7 +43,7 @@ const SearchResult = props => {
                                         <button className="saveBook btn btn-primary" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
                                             Save Book
                                         </button>
-                                        <a href={book.link} target="_blank">
+                                        <a href={book.link} target="_blank" rel="noopener noreferrer">
                                             <button className="viewBook btn btn-success">
                                                 View Book
                                         </button>
