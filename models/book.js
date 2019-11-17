@@ -21,10 +21,6 @@ const BookSchema = new Schema({
     link: {
         type: String,
         required: true
-    },
-    saved: {
-        type: Boolean,
-        required: true
     }
 });
 
