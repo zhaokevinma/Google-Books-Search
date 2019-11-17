@@ -1,18 +1,21 @@
-form{
+form {
     background: #18BC9C;
     color: white;
 }
-.BookSearchLabel{
+
+.BookSearchLabel {
     margin-left:20px;
     margin-top: 10px
 }
-.submitBtn{
+
+.submitBtn {
     color: black;
     background-color: #ecf0f1;
     margin-bottom: 10px;
     margin-left: 20px;
 }
-.form-control{
+
+.form-control {
     margin-left: 20px;
     width: 95%
 }

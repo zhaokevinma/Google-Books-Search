@@ -1,5 +1,9 @@
+// ------ Dependencies ------
+
 import React from "react";
 import "./style.css";
+
+// ------ Nav ------
 
 function Nav() {
   return (
@@ -14,4 +18,6 @@ function Nav() {
   );
 }
 
+
+// ------ Export ------
 export default Nav;

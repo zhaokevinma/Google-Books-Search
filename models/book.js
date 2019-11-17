@@ -1,5 +1,10 @@
+// ------ Dependencies ------
+
 const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
+
+
+// ------ Schema ------
 
 const BookSchema = new Schema({
     title: {
@@ -29,4 +34,6 @@ const BookSchema = new Schema({
 
 const Book = mongoose.model('Book', BookSchema);
 
+
+// ------ Export Book ------
 module.exports = Book;

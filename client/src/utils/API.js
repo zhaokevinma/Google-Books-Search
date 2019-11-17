@@ -1,12 +1,17 @@
+// ------ Dependencies ------
+
 import axios from "axios"
 
+
+// ------GET and POST requests ------
+
 export default {
-    // Get book from google search 
+    // Query books with keyword provided from user - no API key needed - tested with Insomnia 
     getGoogleSearchBooks: function(query) {
         return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query)
     },
 
-    // Gets all books
+    // Gets all books from database
     getBooks: function () {
         return axios.get("/api/books");
     },
@@ -25,5 +30,5 @@ export default {
     deleteBook: function (id) {
         return axios.delete("/api/books/" + id);
     }
-
+    
 }

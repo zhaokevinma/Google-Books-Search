@@ -1,6 +1,11 @@
+// ------ Dependencies ------
+
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+
+
+// ------ 404 Page ------
 
 function NoMatch() {
   return (
@@ -20,5 +25,8 @@ function NoMatch() {
     </Container>
   );
 }
+
+
+// ------ Export ------
 
 export default NoMatch;

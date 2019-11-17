@@ -1,5 +1,10 @@
+// ------ Dependencies ------
+
 import React from "react";
 import "./style.css";
+
+
+// ------ Search form -------
 
 const SearchForm = props => {
     return (
@@ -21,4 +26,6 @@ const SearchForm = props => {
     )
 }
 
+
+// ------ Export ------
 export default SearchForm

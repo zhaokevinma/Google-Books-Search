@@ -1,5 +1,10 @@
+// ------ Dependencies ------
+
 import React from "react";
 import "./style.css";
+
+
+// ------Jumbotron ------
 
 function Jumbotron() {
   return (
@@ -11,5 +16,8 @@ function Jumbotron() {
     </div>
   );
 }
+
+
+// ------ Export ------
 
 export default Jumbotron;

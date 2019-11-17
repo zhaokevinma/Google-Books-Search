@@ -1,3 +1,5 @@
+// ------ Dependencies ------
+
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SaveBooks from "./pages/SaveBooks";
@@ -6,6 +8,8 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import "./App.css"
 
+
+// ------ App ------
 
 function App() {
   return (
@@ -23,4 +27,6 @@ function App() {
   );
 }
 
+
+// ------ Export App ------
 export default App;

@@ -1,3 +1,5 @@
+// ------ Dependencies ------
+
 import React, { Component } from "react";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
@@ -6,8 +8,10 @@ import SearchForm from "../components/SearchForm";
 import SearchResult from "../components/SearchResult"
 
 
+// ------ React class to render state ------ 
+
 class SearchBooks extends Component {
-    //create state
+    // Initialize/create a state
     state = {
         search: "",
         books: [],
@@ -15,26 +19,28 @@ class SearchBooks extends Component {
         message: ""
     };
 
-    //function to take value of what enter in the search bar
+    // Handles user input from text input field 
     handleInputChange = event => {
         this.setState({ search: event.target.value })
     }
 
-    //function to control the submit button of the search form 
+    // Handles button click event for submitting search from user
     handleFormSubmit = event => {
+        // Do not refresh the page when cliced 
         event.preventDefault();
-        // once it clicks it connects to the google book api with the search value
+        // Upon click, API.getGoogleSearchs is called -> query send to Google Books API
         API.getGoogleSearchBooks(this.state.search)
+            // Results from Google Books API
             .then(res => {
                 if (res.data.items === "error") {
                     throw new Error(res.data.items);
                 }
                 else {
-                    // store response in a array
+                    // Hold response in array "results"
                     let results = res.data.items
-                    //map through the array 
+                    // Map through the array 
                     results = results.map(result => {
-                        //store each book information in a new object 
+                        // Store each book information in a new object "result"
                         result = {
                             key: result.id,
                             id: result.id,
@@ -44,31 +50,37 @@ class SearchBooks extends Component {
                             image: result.volumeInfo.imageLinks.thumbnail,
                             link: result.volumeInfo.infoLink
                         }
+                        // Return is not necessary but is a better practice to avoid warnings
                         return result;
                     })
-                    // reset the sate of the empty books array to the new arrays of objects with properties geting back from the response
+                    // Update state with the books(now objects) stored in "results" array
                     this.setState({ books: results, error: "" })
                 }
             })
             .catch(err => this.setState({ error: err.items }));
     }
 
+    // Handles button click event for saving a book into database
     handleSavedButton = event => {
-        // console.log(event)
+        // Do not refresh the page
         event.preventDefault();
+        // Testing purpose - NOT essential to app functionality
         console.log(this.state.books)
+        // This can be replaced with a prop method, here using event.target
         let savedBooks = this.state.books.filter(book => book.id === event.target.id)
+        // After filtering, grap the filtered array's 1st entry
         savedBooks = savedBooks[0];
+        // Send this book to API.saveBooks to save to database
         API.saveBook(savedBooks)
             .then(this.setState({ message: alert("Your book is saved") }))
             .catch(err => console.log(err.response))
     }
+
+    // Renders components and state
     render() {
         return (
             <Container fluid>
-                <Jumbotron>
-                    <h1 className="text-white">Find Your Favorite Books with GoogleBook API</h1>
-                </Jumbotron>
+                <Jumbotron />
                 <Container>
                     <Row>
                         <Col size="12">
@@ -87,7 +99,8 @@ class SearchBooks extends Component {
         )
     }
 
-
 }
 
+
+// ------ Export SearchBooks ------
 export default SearchBooks
