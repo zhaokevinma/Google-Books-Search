@@ -6,21 +6,24 @@ const BookSchema = new Schema({
         type: String,
         required: true
     },
-    authors: {
-        type: [String],
-        required: true
-    },
-    description: {
+    authors: [{
         type: String,
         required: true
+    }],
+    description: {
+        type: String
     },
     image: {
         type: String,
-        required: true
+        trim: true
     },
     link: {
         type: String,
-        required: true
+        trim: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 

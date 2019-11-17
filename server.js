@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 // ------ Environmental Variables ------
 const PORT = process.env.PORT || 3001;
 const routes = require("./routes");
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/googlebooks';
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
 
 // ------ Create App -------
 const app = express();

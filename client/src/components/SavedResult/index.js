@@ -5,7 +5,7 @@ import {Row, Col} from "../Grid"
 const SavedResult = props => {
     return (props.savedBooks.length === 0) ? (
         <div className="card">
-            <div className="card-body player">
+            <div className="card-body">
                 <div className="article">
                     <h4>Books that you saved</h4>
                 </div>
@@ -13,7 +13,7 @@ const SavedResult = props => {
         </div>
     ):(
         <div className="card">
-            <div className="card-body player">
+            <div className="card-body">
                 <div className="article">
                     <h4>Books that you saved</h4>
                     {props.savedBooks.map((savedbook,name) => {
