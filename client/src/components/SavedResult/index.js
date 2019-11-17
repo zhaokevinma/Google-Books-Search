@@ -7,7 +7,7 @@ const SavedResult = props => {
         <div className="card">
             <div className="card-body player">
                 <div className="article">
-                    <h3>Books that You Saved</h3>
+                    <h4>Books that you saved</h4>
                 </div>
             </div>
         </div>
@@ -15,8 +15,8 @@ const SavedResult = props => {
         <div className="card">
             <div className="card-body player">
                 <div className="article">
-                    <h3>Books that You Saved</h3>
-                    {props.savedBooks.map(savedbook => {
+                    <h4>Books that you saved</h4>
+                    {props.savedBooks.map((savedbook,name) => {
                         return (
                             <li className="saved-list list-group-item">
                                 <Row className="SearchResult" id={savedbook.title + "Card"} key={savedbook._id}>
